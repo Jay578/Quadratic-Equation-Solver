@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<math.h> //necessary for sqrt function
+
+main()
+{
+  double a,b,c,x,first_root,second_root; 
+/*x holds part of the formula to solve the quadratic equation, 
+the first and second root variables hold the two possible answers*/ 
+
+  printf(" For the quadratic equation please enter the constant, a \n");
+  scanf("%lf",&a);
+  printf(" Please enter the constant, b \n");
+  scanf("%lf",&b);
+  printf(" Please enter the constant, c \n");
+  scanf("%lf",&c);
+   
+  x = (b * b) - 4 * a * c;
+ 
+  if(x > 0)
+  {
+  	first_root = (-b + sqrt(x)) / (2*a);
+  	second_root = (-b - sqrt(x)) / (2*a);
+  	printf("\n The first root is %.2lf ",first_root);
+  	printf("\n The second root is %.2lf ",second_root);
+  	return 0; 
+  }
+  else if (x==0) //if the roots are equal only one has to be calculated and outputted
+  {
+  	first_root = -b /(2* a);
+    printf("Root of quadratic equation is: %.2lf ",first_root);
+  	return 0;
+  else 
+  {
+   	printf(" The discriminant is negative; the parabola doesn't intersect the x-axis and thus has no roots. \n");
+  	return 0;
+  }  
+}
